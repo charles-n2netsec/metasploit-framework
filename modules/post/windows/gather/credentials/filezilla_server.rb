@@ -1,4 +1,8 @@
 ##
+# $Id$
+##
+
+##
 # This file is part of the Metasploit Framework and may be subject to
 # redistribution and commercial restrictions. Please see the Metasploit
 # web site for more information on licensing and terms of use.
@@ -20,6 +24,7 @@ class Metasploit3 < Msf::Post
 			'Description'    => %q{ This module will collect credentials from the FileZilla FTP server if installed. },
 			'License'        => MSF_LICENSE,
 			'Author'         => ['bannedit'],
+			'Version'        => '$Revision$',
 			'Platform'       => ['win'],
 			'SessionTypes'   => ['meterpreter' ]
 		))
@@ -89,10 +94,10 @@ class Metasploit3 < Msf::Post
 		'Indent'    => 1,
 		'Columns'   =>
 		[
-			"User",
-			"Password",
 			"Host",
 			"Port",
+			"User",
+			"Password",
 			"SSL"
 		])
 
@@ -105,14 +110,15 @@ class Metasploit3 < Msf::Post
 			"User",
 			"Dir",
 			"FileRead",
+			"FileWrite",
 			"FileDelete",
 			"FileAppend",
 			"DirCreate",
 			"DirDelete",
 			"DirList",
 			"DirSubdirs",
-			"Home",
-			"AutoCreate"
+			"AutoCreate",
+			"Home"
 		])
 
 		configuration = Rex::Ui::Text::Table.new(
